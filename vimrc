@@ -10,7 +10,7 @@ if v:progname =~? "evim"
 endif
 
 " Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+"source $VIMRUNTIME/defaults.vim
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -96,3 +96,4 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
+set clipboard=unnamed
