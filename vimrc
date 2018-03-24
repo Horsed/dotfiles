@@ -85,10 +85,9 @@ vnoremap º :m '>+1<CR>gv=gv
 vnoremap ∆ :m '<-2<CR>gv=gv
 
 nnoremap ≈ :hide<CR>
-nnoremap € :Ex<CR>
-nnoremap † :tabnew<CR>:Ex<CR>
-nnoremap √ :vsplit<CR>:w<CR>:Ex<CR>
-nnoremap ‚ :split<CR>:w<CR>:Ex<CR>
+nnoremap † :tabnew<CR>
+nnoremap √ :vsplit<CR>:w<CR>
+nnoremap ‚ :split<CR>:w<CR>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -97,3 +96,5 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 set clipboard=unnamed
+map <C-n> :NERDTreeToggle<CR>
+execute pathogen#infect()
