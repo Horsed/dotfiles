@@ -105,3 +105,11 @@ colorscheme nova
 set wildmenu
 set wildmode=longest,list
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.*.meta     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*.meta  " Windows
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	  \ 'file': '\v\.(exe|so|dll|meta)$',
+		  \ 'link': 'some_bad_symbolic_links',
+			  \ }
