@@ -40,9 +40,11 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
+
+set autoindent		" always set autoindenting on
+
+syntax on
 
 " Add optional packages.
 "
@@ -52,7 +54,6 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-syntax on
 
 onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 onoremap <silent> a/ :<C-U>normal! F/vf/<CR>
@@ -98,3 +99,9 @@ set splitright
 set clipboard=unnamed
 map <C-n> :NERDTreeToggle<CR>
 execute pathogen#infect()
+
+colorscheme nova
+
+set wildmenu
+set wildmode=longest,list
+
