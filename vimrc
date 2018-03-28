@@ -100,8 +100,6 @@ set clipboard=unnamed
 map <C-n> :NERDTreeToggle<CR>
 execute pathogen#infect()
 
-colorscheme nova
-
 set wildmenu
 set wildmode=longest,list
 
