@@ -71,11 +71,6 @@ hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=b
 set hlsearch
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 
-nnoremap H 0
-nnoremap L $
-nnoremap J G
-nnoremap K gg
-
 nnoremap º :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
 
