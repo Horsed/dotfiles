@@ -63,7 +63,7 @@ ZSH_THEME="gentoo"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  jump
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
