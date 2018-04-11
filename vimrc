@@ -88,10 +88,14 @@ set wildmenu
 set wildmode=longest,list
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.*.meta     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*.meta  " Windows
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.*.meta,*~     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*.meta,*~  " Windows
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
 	  \ 'file': '\v\.(exe|so|dll|meta)$',
 		  \ 'link': 'some_bad_symbolic_links',
 			  \ }
+
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
