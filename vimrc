@@ -83,6 +83,7 @@ vnoremap ∆ :m '<-2<CR>gv=gv
 set clipboard=unnamed
 map <C-n> :NERDTreeToggle<CR>
 execute pathogen#infect()
+filetype plugin indent on
 
 set wildmenu
 set wildmode=longest,list
