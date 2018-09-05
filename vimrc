@@ -89,6 +89,7 @@ vnoremap ∆ :m '<-2<CR>gv=gv
 set clipboard=unnamed
 map <C-n> :NERDTreeToggle<CR>
 execute pathogen#infect()
+filetype plugin indent on
 
 set wildmenu
 set wildmode=longest,list
@@ -107,5 +108,6 @@ let g:ctrlp_custom_ignore = {
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
+set noundofile     "no undo files
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
