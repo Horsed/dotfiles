@@ -60,6 +60,7 @@ onoremap <silent> a/ :<C-U>normal! F/vf/<CR>
 xnoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 xnoremap <silent> a/ :<C-U>normal! F/vf/<CR>
 
+set expandtab
 set tabstop=2
 set shiftwidth=2
 set relativenumber 
@@ -91,11 +92,7 @@ set wildmode=longest,list
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.*.meta,*~     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*.meta,*~  " Windows
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-	  \ 'file': '\v\.(exe|so|dll|meta)$',
-		  \ 'link': 'some_bad_symbolic_links',
-			  \ }
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|meta)$', 'link': 'some_bad_symbolic_links', }
 
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
@@ -103,3 +100,6 @@ set noswapfile     "no swap files
 set noundofile     "no undo files
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+
+nmap <S-Enter> O<Esc>j "insert new line above but stay in current line
+nmap <CR> o<Esc>k      "insert new line below but stay in current line

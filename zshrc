@@ -1,11 +1,11 @@
 eval `ssh-agent -s`
-ssh-add
+ssh-add $HOME/.ssh/id_rsa
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/martin/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -88,6 +88,16 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+gitPush()
+{
+    if [ "$#" -ne 1 ];
+    then
+        git push
+    else
+        git add . && git add . -u && git commit -am "$@" && git push
+    fi
+}
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -97,11 +107,17 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gs='git status'
+alias gs='git status -sb'
 alias gc='git add . && git add . -u && git commit -am'
 alias ll='ls -al'
 alias ..='cd ..'
 alias .='ll'
+alias pull='git pull'
+alias push=gitPush
+alias pp='git pull && git push'
+alias co='git checkout'
+alias cl='clear'
+alias gw='./gradlew'
 
 bindkey -v
 
