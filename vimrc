@@ -54,23 +54,29 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-
 onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 onoremap <silent> a/ :<C-U>normal! F/vf/<CR>
 xnoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 xnoremap <silent> a/ :<C-U>normal! F/vf/<CR>
 
 set expandtab
+" moving between tabs
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+
 set tabstop=2
 set shiftwidth=2
 set relativenumber 
 set number
 
+" set path to dir of current file, current dir, and each dir under the current dir
+set path=.,,**
+
 set cursorline
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
 set hlsearch
-nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
+nnoremap <C-s> :nohl<CR><C-s>:echo "Search Cleared"<CR>
 
 nnoremap º :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
@@ -89,6 +95,8 @@ filetype plugin indent on
 set wildmenu
 set wildmode=longest,list
 
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.*.meta,*~     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*.meta,*~  " Windows
