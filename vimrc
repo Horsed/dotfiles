@@ -45,6 +45,8 @@ endif " has("autocmd")
 set autoindent		" always set autoindenting on
 
 syntax on
+set background=dark
+colorscheme dracula
 
 " Add optional packages.
 "
@@ -88,7 +90,6 @@ vnoremap º :m '>+1<CR>gv=gv
 vnoremap ∆ :m '<-2<CR>gv=gv
 
 set clipboard=unnamed
-map <C-n> :NERDTreeToggle<CR>
 execute pathogen#infect()
 filetype plugin indent on
 
